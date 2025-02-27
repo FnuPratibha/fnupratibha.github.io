@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratibha - FPGA & RTL Design Specialist</title>
+    <style>
+        :root {
+            --primary-color: #2a4365;
+            --secondary-color: #4299e1;
+            --text-color: #2d3748;
+            --light-bg: #f7fafc;
+            --border-color: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #a0aec0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: var(--secondary-color);
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 10px auto;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--secondary-color);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::after {
+            right: -10px;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .date {
+            color: var(--secondary-color);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-img {
+            height: 200px;
+            background-color: #a0aec0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .project-tag {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .footer-nav {
+            margin: 20px 0;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left::after,
+            .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-img">P</div>
+                <h1>FNU Pratibha</h1>
+                <p class="tagline">FPGA & RTL Design Specialist | Computer Engineering MS</p>
+                <div class="contact-info">
+                    <a href="mailto:pratibha2023@my.fit.edu">pratibha2023@my.fit.edu</a> |
+                    <a href="tel:+13213897174">(321)-389-7174</a> |
+                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I am a Computer Engineering graduate with expertise in FPGA design, RTL development, and hardware
+                    acceleration. My focus is on developing high-performance computing solutions, particularly in
+                    quantum computing applications and embedded systems.</p>
+                <p>With experience in industry and academia, I specialize in creating optimized hardware implementations
+                    that solve complex computational challenges while meeting strict performance, power, and area
+                    constraints.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>RTL & FPGA Design</h3>
+                    <ul class="skill-list">
+                        <li>Advanced RTL (SystemVerilog, VHDL, Verilog)</li>
+                        <li>FPGA Implementation</li>
+                        <li>SoC Architecture</li>
+                        <li>High-Level Synthesis</li>
+                        <li>IP Integration</li>
+                        <li>Memory Interface Design (PCIe Gen4, AXI4, DDR4/HBM)</li>
+                        <li>Bus Protocols</li>
+                        <li>Timing Closure</li>
+                        <li>Place & Route Design Synthesis</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Verification & Debug</h3>
+                    <ul class="skill-list">
+                        <li>UVM</li>
+                        <li>Assertion-Based & Formal Verification</li>
+                        <li>Clock Domain Crossing/Reset Domain Crossing (CDC/RDC) Analysis</li>
+                        <li>Power & Signal Analysis</li>
+                        <li>Protocol Analysis</li>
+                        <li>Hardware Debug (ILA)</li>
+                        <li>Functional Coverage</li>
+                        <li>Testbench Development</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <ul class="skill-list">
+                        <li>Python/TCL for HLS & ML/FPGA</li>
+                        <li>C/C++ (Linux/Windows)</li>
+                        <li>Build Systems (Make, CMake)</li>
+                        <li>Version Control (Git)</li>
+                        <li>MATLAB</li>
+                        <li>Hardware-Software Co-Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools Expertise</h3>
+                    <ul class="skill-list">
+                        <li>Vivado, Vitis HLS</li>
+                        <li>ModelSim/QuestaSim</li>
+                        <li>VCS</li>
+                        <li>Synopsys Design Compiler</li>
+                        <li>Cadence Genus</li>
+                        <li>Intel Quartus Prime</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Optimization & Analysis</h3>
+                    <ul class="skill-list">
+                        <li>Pipeline Design</li>
+                        <li>Memory Optimization</li>
+                        <li>Resource Utilization</li>
+                        <li>PPA Trade-offs</li>
+                        <li>Latency Reduction</li>
+                        <li>Clock Tree Analysis</li>
+                        <li>Low-Power Techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Graduate Teaching Assistant</h3>
+                        <p class="date">Jan 2024 - Dec 2024</p>
+                        <p><strong>Florida Institute of Technology, Melbourne, FL</strong></p>
+                        <ul>
+                            <li>Facilitated hands-on laboratory sessions for 100+ students in microprocessor
+                                architecture</li>
+                            <li>Mentored students through 15+ signal processing experiments, integrating MATLAB for DSP
+                                applications</li>
+                            <li>Planned and provided comprehensive lab documentation for peripheral interfacing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Associate Professional Software Engineer</h3>
+                        <p class="date">Feb 2021 - Dec 2022</p>
+                        <p><strong>DXC Technology, HPE, Bangalore, IN</strong></p>
+                        <ul>
+                            <li>Architected and implemented system-level firmware modules for enterprise servers</li>
+                            <li>Spearheaded firmware optimization initiatives through advanced debugging tools</li>
+                            <li>Designed an automated validation framework using SQL and industry-standard tools</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Hardware Design Intern</h3>
+                        <p class="date">Sep 2020 - Feb 2021</p>
+                        <p><strong>EmbedKari systems Pvt ltd. Bangalore, IN</strong></p>
+                        <ul>
+                            <li>Engineered a mixed-signal embedded system using TI ARM Cortex-M4F</li>
+                            <li>Developed and validated peripheral interfaces with 98% reliability</li>
+                            <li>Executed real-time firmware with sensor fusion algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Master of Science in Computer Engineering</h3>
+                        <p class="date">Jan 2023 - Dec 2024</p>
+                        <p><strong>Florida Institute of Technology, Melbourne, FL</strong></p>
+                        <p>GPA: 3.62/4.0</p>
+                        <p>Coursework: Computer networks, Embedded Systems, Computer Architecture, Digital Signal
+                            Processing, FPGA, Digital Communication, Modern Data Systems, Quantum Computing,
+                            High-performance Computing</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Engineering in Electronics and Communication Engineering</h3>
+                        <p class="date">Sep 2018 - Aug 2021</p>
+                        <p><strong>Dayananda Sagar College of Engineering, Bangalore, IN</strong></p>
+                        <p>GPA: 3.2/4.0</p>
+                        <p>Coursework: Analog and Digital Communication, Operating Systems Fundamentals, RTOS, IoT, VLSI
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">Quantum ML</div>
+                    <div class="project-info">
+                        <h3>Accelerating Parameter Optimization for QML using FPGA</h3>
+                        <p>Created a custom dual-kernel hardware accelerator integrating a Quantum Processing Unit (QPU)
+                            with FPGA using Xilinx Vitis AI, achieving up to 5x speedup in parameter optimization.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">FPGA</span>
+                            <span class="project-tag">Quantum Computing</span>
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Hardware Acceleration</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Financial Planner</div>
+                    <div class="project-info">
+                        <h3>Financial Planner/Predictor with Pynq-z2 and Raspberry Pi</h3>
+                        <p>Designed and applied custom state machine architecture on Pynq-Z2 FPGA using VHDL, optimizing
+                            financial computation modules with 85% prediction accuracy.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">VHDL</span>
+                            <span class="project-tag">Pynq-Z2</span>
+                            <span class="project-tag">Raspberry Pi</span>
+                            <span class="project-tag">State Machine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">COVID-19 Monitoring</div>
+                    <div class="project-info">
+                        <h3>COVID-19 Social Distance Monitoring and Contact Tracing</h3>
+                        <p>Developed an advanced health monitoring wristband with real-time alerts and social distancing
+                            features alongside three team members.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Embedded Systems</span>
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Health Monitoring</span>
+                            <span class="project-tag">Sensor Fusion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="about-content">
+                <p>I'm currently open to opportunities in FPGA design, hardware acceleration, and embedded systems
+                    development. Feel free to reach out via email or connect with me on LinkedIn.</p>
+                <div class="contact-info" style="margin-top: 30px;">
+                    <a href="mailto:pratibha2023@my.fit.edu">pratibha2023@my.fit.edu</a> |
+                    <a href="tel:+13213897174">(321)-389-7174</a> |
+                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-nav">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <p class="copyright">© 2024 FNU Pratibha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
