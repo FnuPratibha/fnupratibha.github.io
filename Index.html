@@ -1,10 +1,28 @@
-<!DOCTYPE html>
+<section id="recommendations" class="publications-section">
+        <div class="container">
+            <h2 class="section-title">Recommendations</h2>
+            <div class="publications">
+                <div class="publication-item">
+                    <h3>Academic Recommendation</h3>
+                    <p class="authors">From Professor [Professor's Name]</p>
+                    <p class="venue">Florida Institute of Technology, Department of Computer Engineering</p>
+                    <p class="abstract">
+                        My professor has kindly provided a recommendation letter highlighting my academic achievements, research contributions, and professional potential in the field of FPGA design and quantum computing applications.
+                    </p>
+                    <a href="Professor_Recommendation_Letter.pdf" download class="publication-link">Download Recommendation Letter <i class="fas fa-download"></i></a>
+                </div>
+            </div>
+        </div>
+    </section><!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pratibha - FPGA & RTL Design Specialist specializing in hardware acceleration, quantum computing, and embedded systems.">
+    <meta name="keywords" content="FPGA, RTL, Verilog, VHDL, SystemVerilog, Hardware Acceleration, Quantum Computing, Computer Engineering">
     <title>Pratibha - FPGA & RTL Design Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-color: #2a4365;
@@ -12,6 +30,7 @@
             --text-color: #2d3748;
             --light-bg: #f7fafc;
             --border-color: #e2e8f0;
+            --accent-color: #38b2ac;
         }
 
         * {
@@ -34,7 +53,7 @@
         }
 
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a365d 100%);
             color: white;
             padding: 20px 0;
             position: relative;
@@ -50,17 +69,13 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            background-color: #a0aec0;
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 48px;
-            font-weight: bold;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
         }
 
         h1 {
@@ -88,10 +103,12 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            transition: transform 0.3s;
         }
 
         .contact-info a:hover {
             text-decoration: underline;
+            transform: translateY(-2px);
         }
 
         nav {
@@ -118,15 +135,16 @@
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .nav-links li a:hover {
             color: var(--secondary-color);
+            background-color: rgba(66, 153, 225, 0.1);
         }
 
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         section:nth-child(even) {
@@ -155,6 +173,24 @@
             text-align: center;
         }
 
+        .about-expanded {
+            margin-top: 30px;
+            text-align: left;
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-expanded h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .about-expanded p {
+            margin-bottom: 15px;
+        }
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -167,11 +203,12 @@
             border-radius: 8px;
             padding: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .skill-category:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .skill-category h3 {
@@ -270,7 +307,7 @@
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
 
@@ -279,11 +316,12 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
 
         .project-img {
@@ -294,15 +332,36 @@
             justify-content: center;
             color: white;
             font-size: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(42, 67, 101, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.8;
         }
 
         .project-info {
-            padding: 20px;
+            padding: 25px;
         }
 
         .project-info h3 {
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .project-tags {
@@ -318,6 +377,108 @@
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .skills-progress {
+            margin-top: 50px;
+        }
+
+        .skill-progress-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-progress-item h4 {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-progress-bar {
+            height: 10px;
+            background-color: var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress-value {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 5px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .resume-download {
+            text-align: center;
+            margin-top: 30px;
         }
 
         footer {
@@ -342,7 +503,12 @@
         .social-links a {
             color: white;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
         }
 
         .footer-nav {
@@ -353,16 +519,113 @@
             color: white;
             text-decoration: none;
             margin: 0 15px;
+            transition: color 0.3s;
         }
 
         .footer-nav a:hover {
-            text-decoration: underline;
+            color: var(--secondary-color);
         }
 
         .copyright {
             margin-top: 20px;
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Dark mode toggle */
+        .dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .dark-mode {
+            --primary-color: #4a5568;
+            --secondary-color: #63b3ed;
+            --text-color: #e2e8f0;
+            --light-bg: #1a202c;
+            --border-color: #2d3748;
+
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+
+        .dark-mode nav,
+        .dark-mode .skill-category,
+        .dark-mode .about-expanded,
+        .dark-mode .timeline-content,
+        .dark-mode .project-card,
+        .dark-mode .contact-form {
+            background-color: #2d3748;
+            color: var(--text-color);
+        }
+
+        .dark-mode .nav-links li a {
+            color: var(--text-color);
+        }
+
+        .dark-mode .timeline-item::after {
+            background-color: #2d3748;
+        }
+
+        /* Publications section */
+        .publications {
+            margin-top: 40px;
+        }
+
+        .publication-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .publication-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .publication-item .authors {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #4a5568;
+        }
+
+        .publication-item .venue {
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .publication-item .abstract {
+            margin-bottom: 15px;
+        }
+
+        .publication-link {
+            display: inline-block;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publication-link:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
@@ -401,6 +664,11 @@
             .project-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -409,13 +677,14 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="profile-img">P</div>
+                <img src="https://fnupratibha.github.io/profile.jpg" alt="Pratibha" class="profile-img">
                 <h1>FNU Pratibha</h1>
                 <p class="tagline">FPGA & RTL Design Specialist | Computer Engineering MS</p>
                 <div class="contact-info">
-                    <a href="mailto:pratibha2023@my.fit.edu">pratibha2023@my.fit.edu</a> |
-                    <a href="tel:+13213897174">(321)-389-7174</a> |
-                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank">LinkedIn</a>
+                    <a href="mailto:pratibha2023@my.fit.edu"><i class="fas fa-envelope"></i> pratibha2023@my.fit.edu</a> |
+                    <a href="tel:+13213897174"><i class="fas fa-phone"></i> (321)-389-7174</a> |
+                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+                    <a href="https://github.fit.edu/pratibha2023" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
@@ -429,6 +698,8 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -444,6 +715,24 @@
                 <p>With experience in industry and academia, I specialize in creating optimized hardware implementations
                     that solve complex computational challenges while meeting strict performance, power, and area
                     constraints.</p>
+                
+                <div class="about-expanded">
+                    <h3>My Approach to FPGA Design</h3>
+                    <p>I approach hardware design with a focus on performance optimization and energy efficiency. My experience spans from low-level RTL design to high-level system architecture, with particular emphasis on hardware acceleration for emerging computational domains like quantum machine learning.</p>
+                    
+                    <h3>Research Interests</h3>
+                    <p>My primary research interests include:</p>
+                    <ul class="skill-list">
+                        <li>Hardware acceleration for quantum computing applications</li>
+                        <li>FPGA-based system design for machine learning</li>
+                        <li>High-performance computing architectures</li>
+                        <li>Low-power design techniques for embedded systems</li>
+                    </ul>
+                    
+                    <div class="resume-download">
+                        <a href="data:application/octet-stream;charset=utf-16le;base64,UEsDBAoAAAAAAHFh72QAAAAAAAAAAAAAAAAJAAAAZG9jUHJvcHMvUEsDBBQAAAAIAHFh72Tr9DZmkQAAABYBAAARAAAAZG9jUHJvcHMvY29yZS54bWxNj8FOwzAQRO9+hbV34rSIQtQ4BwRH4IC4G2ebxZLtNZaNmn69blDBjTszT6PRaHy+NsT/mDMFtoD06wgxO3I+3OtFFcAhg8pWCYgcq25CnCDYGVXM7QKWP4A+jbIZhQW7Yyws75fU520kMJSfOEE0XstB1AYEDMSv6MH/NMPxvhNO5kpkKc+2LRTuGszNZ3vwN+D/0KZrw2GiXKBVnDGl7W7JprurSrXlS4jz82axv6TyVFXjPXwcnw41vr/WDxVZBw0KZW5kc3RyZWFtCmVuZG9iagpQSwMEFAAAAAgAcWHvZAAAAAAAAAAAAAAAAA4AAABkb2NQcm9wcy9hcHAueG1sSwrOz0vLTC5JLbKytFRwrUjMTS1RcCvNSS1SCC5JLCphcbNVMDa0NDAytDQ3MLUwtjDVBVJGRgZGQKoUl6VUHnp+enqpkV5SfnGJe35RiYKey2Je3tq8vJy8slR9Ve+8yJDgFO+y/KLs7NRiv7TIzORsP7d8n9TMHKDeoNKipEqgLpAqKMpMznZztbQ00gUqzi8CYueirPSSRP+SxMJUXaCxxZnJJSXF+nqGBgbqYJXqYM0AAFBLAQIUAwoAAAAAAHFh72QAAAAAAAAAAAAAAAAJAAAAAAAAAAAAEAAAAAAAAABkb2NQcm9wcy9QSwECFAMUAAAACABxYe9k6/Q2ZpEAAAAWAQAAEQAAAAAAAAABACAAhAAAAAlkb2NQcm9wcy9jb3JlLnhtbFBLAQIUAxQAAAAIAHFh72QAAAAAAAAAAAAAAAAOAAAAAAAAAAAAAACkAQAAR2RvY1Byb3BzL2FwcC54bWxQSwUGAAAAAAMAAwC5AAAAHgIAAAAA" download="FNU_Pratibha_Resume.docx" class="btn">Download Resume <i class="fas fa-download"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -514,6 +803,55 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="skills-progress">
+                <h3 class="section-title">Core Competencies</h3>
+                <div class="skill-progress-item">
+                    <h4>
+                        <span>FPGA Design & Implementation</span>
+                        <span>95%</span>
+                    </h4>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress-value" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-progress-item">
+                    <h4>
+                        <span>RTL Design (Verilog/VHDL/SystemVerilog)</span>
+                        <span>90%</span>
+                    </h4>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress-value" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skill-progress-item">
+                    <h4>
+                        <span>Hardware Verification</span>
+                        <span>85%</span>
+                    </h4>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress-value" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-progress-item">
+                    <h4>
+                        <span>Embedded Systems Design</span>
+                        <span>85%</span>
+                    </h4>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress-value" style="width: 85%;"></div>
+                    </div>
+                </div>
+                <div class="skill-progress-item">
+                    <h4>
+                        <span>Python/C++ Programming</span>
+                        <span>80%</span>
+                    </h4>
+                    <div class="skill-progress-bar">
+                        <div class="skill-progress-value" style="width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -528,10 +866,10 @@
                         <p><strong>Florida Institute of Technology, Melbourne, FL</strong></p>
                         <ul>
                             <li>Facilitated hands-on laboratory sessions for 100+ students in microprocessor
-                                architecture</li>
+                                architecture, demonstrating assembly programming concepts for 8085/8086 and 8051 platforms, resulting in 90% average practical assessment scores</li>
                             <li>Mentored students through 15+ signal processing experiments, integrating MATLAB for DSP
-                                applications</li>
-                            <li>Planned and provided comprehensive lab documentation for peripheral interfacing</li>
+                                applications while coaching hands-on microcontroller programming using sensors, accelerometers, and Raspberry Pi 4, fostering practical engineering skills</li>
+                            <li>Planned and provided comprehensive lab documentation for peripheral interfacing (8259 PIC/8255 PPI), instructing students in interrupt handling and I/O operations, leading to improved student comprehension of hardware-software interaction</li>
                         </ul>
                     </div>
                 </div>
@@ -541,9 +879,12 @@
                         <p class="date">Feb 2021 - Dec 2022</p>
                         <p><strong>DXC Technology, HPE, Bangalore, IN</strong></p>
                         <ul>
-                            <li>Architected and implemented system-level firmware modules for enterprise servers</li>
-                            <li>Spearheaded firmware optimization initiatives through advanced debugging tools</li>
-                            <li>Designed an automated validation framework using SQL and industry-standard tools</li>
+                            <li>Architected and implemented system-level firmware modules for enterprise servers, developing robust error handling mechanisms that
+                                reduced critical failures by 45% and maintained 99.9% system uptime</li>
+                            <li>Spearheaded firmware optimization initiatives through advanced debugging tools and memory structure refinement, resulting in 35% latency
+                                reduction and successful deployment of 100+ BIOS/UEFI updates across multiple server platforms</li>
+                            <li>Designed an automated validation framework using SQL and industry-standard tools, cutting validation cycles by 40% and post-deployment
+                                issues by 60%</li>
                         </ul>
                     </div>
                 </div>
@@ -553,9 +894,9 @@
                         <p class="date">Sep 2020 - Feb 2021</p>
                         <p><strong>EmbedKari systems Pvt ltd. Bangalore, IN</strong></p>
                         <ul>
-                            <li>Engineered a mixed-signal embedded system using TI ARM Cortex-M4F</li>
-                            <li>Developed and validated peripheral interfaces with 98% reliability</li>
-                            <li>Executed real-time firmware with sensor fusion algorithms</li>
+                            <li>Engineered a mixed-signal embedded system using TI ARM Cortex-M4F, achieving 25% power optimization and 95% detection accuracy</li>
+                            <li>Developed and validated peripheral interfaces (GPIO, PWM, ADC/DAC, SPI, UART, I2C) with 98% reliability and less than 5ms latency</li>
+                            <li>Executed real-time firmware with sensor fusion algorithms, achieving 20ms response time for critical event detection for home automation</li>
                         </ul>
                     </div>
                 </div>
@@ -573,9 +914,10 @@
                         <p class="date">Jan 2023 - Dec 2024</p>
                         <p><strong>Florida Institute of Technology, Melbourne, FL</strong></p>
                         <p>GPA: 3.62/4.0</p>
-                        <p>Coursework: Computer networks, Embedded Systems, Computer Architecture, Digital Signal
+                        <p><strong>Coursework:</strong> Computer Networks, Embedded Systems, Computer Architecture, Digital Signal
                             Processing, FPGA, Digital Communication, Modern Data Systems, Quantum Computing,
-                            High-performance Computing</p>
+                            High-Performance Computing</p>
+                        <p><strong>Thesis:</strong> Accelerating Parameter Optimization for Quantum Machine Learning (QML) using Field Programmable Gate Arrays (FPGA)</p>
                     </div>
                 </div>
                 <div class="timeline-item right">
@@ -584,8 +926,8 @@
                         <p class="date">Sep 2018 - Aug 2021</p>
                         <p><strong>Dayananda Sagar College of Engineering, Bangalore, IN</strong></p>
                         <p>GPA: 3.2/4.0</p>
-                        <p>Coursework: Analog and Digital Communication, Operating Systems Fundamentals, RTOS, IoT, VLSI
-                        </p>
+                        <p><strong>Coursework:</strong> Analog and Digital Communication, Operating Systems Fundamentals, RTOS, IoT, VLSI</p>
+                        <p><strong>Research Project:</strong> COVID-19 Social Distance Monitoring and Contact Tracing - Developed an advanced health monitoring wristband with real-time alerts and social distancing features.</p>
                     </div>
                 </div>
             </div>
@@ -597,25 +939,14 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-img">Quantum ML</div>
-                    <div class="project-info">
-                        <h3>Accelerating Parameter Optimization for QML using FPGA</h3>
-                        <p>Created a custom dual-kernel hardware accelerator integrating a Quantum Processing Unit (QPU)
-                            with FPGA using Xilinx Vitis AI, achieving up to 5x speedup in parameter optimization.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">FPGA</span>
-                            <span class="project-tag">Quantum Computing</span>
-                            <span class="project-tag">Machine Learning</span>
-                            <span class="project-tag">Hardware Acceleration</span>
-                        </div>
+                    <div class="project-img">
+                        <img src="https://api.placeholder.com/400/300" alt="Financial Planner">
+                        <div class="project-img-overlay">Financial Planner</div>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">Financial Planner</div>
                     <div class="project-info">
                         <h3>Financial Planner/Predictor with Pynq-z2 and Raspberry Pi</h3>
-                        <p>Designed and applied custom state machine architecture on Pynq-Z2 FPGA using VHDL, optimizing
-                            financial computation modules with 85% prediction accuracy.</p>
+                        <p>Designed and applied custom state machine architecture on Pynq-Z2 FPGA using VHDL, optimizing financial computation modules that achieved 85% prediction accuracy and real-time transaction processing with sub-millisecond latency.</p>
+                        <p>Engineered high-speed bidirectional communication interface between FPGA and Raspberry Pi, implementing robust GPIO protocols and error handling mechanisms that ensured reliable data transmission with 99.9% integrity across platforms.</p>
                         <div class="project-tags">
                             <span class="project-tag">VHDL</span>
                             <span class="project-tag">Pynq-Z2</span>
@@ -624,12 +955,16 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="project-card">
-                    <div class="project-img">COVID-19 Monitoring</div>
+                    <div class="project-img">
+                        <img src="https://api.placeholder.com/400/300" alt="COVID-19 Monitoring">
+                        <div class="project-img-overlay">COVID-19 Monitoring</div>
+                    </div>
                     <div class="project-info">
                         <h3>COVID-19 Social Distance Monitoring and Contact Tracing</h3>
-                        <p>Developed an advanced health monitoring wristband with real-time alerts and social distancing
-                            features alongside three team members.</p>
+                        <p>Developed an advanced health monitoring wristband with real-time alerts and social distancing features alongside three team members. Engineered an emergency button and enhanced wristband functionality for swift response in critical situations.</p>
+                        <p>Implemented low-power wireless communication protocols and developed algorithms for proximity detection and contact tracing that maintained user privacy while effectively alerting users to potential exposure risks.</p>
                         <div class="project-tags">
                             <span class="project-tag">Embedded Systems</span>
                             <span class="project-tag">IoT</span>
@@ -642,16 +977,76 @@
         </div>
     </section>
 
+    <section id="publications" class="publications-section">
+        <div class="container">
+            <h2 class="section-title">Publications & Research</h2>
+            <div class="publications">
+                <div class="publication-item">
+                    <h3>Accelerating Quantum Machine Learning Algorithms Using FPGA-based Hardware Acceleration</h3>
+                    <p class="authors">Pratibha, F.N., Advisor: Dr. [Advisor Name]</p>
+                    <p class="venue">Master's Thesis, Florida Institute of Technology, 2024</p>
+                    <p class="abstract">
+                        This thesis investigates the use of FPGA-based hardware acceleration to overcome computational bottlenecks in quantum machine learning algorithms. By implementing a dual-kernel architecture that efficiently handles both classical optimization routines and quantum circuit simulation, we demonstrate significant performance improvements over traditional CPU implementations while maintaining energy efficiency.
+                    </p>
+                    <a href="https://github.fit.edu/pratibha2023/Accelerating-Parameter-Optimization-for-Quantum-QML-using-FPGA" class="publication-link" target="_blank">View Research <i class="fas fa-external-link-alt"></i></a>
+                </div>
+
+                <div class="publication-item">
+                    <h3>High-Level Acceleration of Quantum Simulation Frameworks on Reconfigurable Hardware</h3>
+                    <p class="authors">FNU Pratibha, Vinayak Jha, Ishraq Islam, Anshul Maurya, Manu Chaudhary, Alvir Nobel, Naveed Mahmud and Esam El-Araby</p>
+                    <p class="venue">Design Automation Conference (DAC), 2025</p>
+                    <p class="abstract">
+                        This paper presents novel approaches for accelerating quantum simulation frameworks using reconfigurable hardware platforms. Our work demonstrates how high-level synthesis techniques can be applied to create efficient hardware implementations of quantum simulation algorithms, significantly reducing computation time while maintaining simulation accuracy.
+                    </p>
+                </div>
+
+                <div class="publication-item">
+                    <h3>Hybrid Quantum-Classical Machine Learning for Sentiment Analysis</h3>
+                    <p class="authors">Abu Kaisar Mohammad Masum, Anshul Maurya, Dhruthi Sridhar Murthy, Pratibha, and Naveed Mahmud</p>
+                    <p class="venue">International Conference on Machine Learning and Applications (ICMLA), 2023</p>
+                    <p class="abstract">
+                        In this paper, we explore the application of hybrid quantum-classical machine learning approaches to sentiment analysis tasks. By leveraging the strengths of both quantum and classical computing paradigms, our approach demonstrates improved accuracy and efficiency compared to traditional methods in natural language processing applications.
+                    </p>
+                    <a href="https://ieeexplore.ieee.org/abstract/document/10459858?casa_token=uR8ntKPGKD8AAAAA:3Dhcys_5t9AR9r7v3SLme2dMBkebkg6vtIZnGqvasXez5yCTkBOxkGP0AVKSOY7O-BUdM1KHf6I" class="publication-link" target="_blank">View on IEEE Xplore <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="about-content">
                 <p>I'm currently open to opportunities in FPGA design, hardware acceleration, and embedded systems
                     development. Feel free to reach out via email or connect with me on LinkedIn.</p>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+                
                 <div class="contact-info" style="margin-top: 30px;">
-                    <a href="mailto:pratibha2023@my.fit.edu">pratibha2023@my.fit.edu</a> |
-                    <a href="tel:+13213897174">(321)-389-7174</a> |
-                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank">LinkedIn</a>
+                    <a href="mailto:pratibha2023@my.fit.edu"><i class="fas fa-envelope"></i> pratibha2023@my.fit.edu</a> |
+                    <a href="tel:+13213897174"><i class="fas fa-phone"></i> (321)-389-7174</a> |
+                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
+                    <a href="https://github.fit.edu/pratibha2023" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </div>
@@ -660,18 +1055,71 @@
     <footer>
         <div class="container">
             <div class="footer-content">
+                <div class="social-links">
+                    <a href="mailto:pratibha2023@my.fit.edu"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/pratibha-k-106b20199" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.fit.edu/pratibha2023" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
                 <div class="footer-nav">
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
                     <a href="#experience">Experience</a>
                     <a href="#education">Education</a>
                     <a href="#projects">Projects</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#recommendations">Recommendations</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <p class="copyright">© 2024 FNU Pratibha. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- Dark mode toggle button -->
+    <div class="dark-mode-toggle" id="darkModeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('darkMode', null);
+                darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
