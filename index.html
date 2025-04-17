@@ -904,8 +904,13 @@
                     </div>
                     <div class="project-info">
                         <h3>Accelerating Parameter Optimization for QML using FPGA</h3>
-                        <p>Identified and addressed a critical performance bottleneck in Quantum Machine Learning (QML) training, where parameter optimization and quantum circuit simulation were consuming excessive computational resources and time on classical processors.</p>
-                        <p>Created a custom dual-kernel hardware accelerator integrating a Quantum Processing Unit (QPU) with FPGA using Xilinx Vitis AI, achieving up to 5x speedup in parameter optimization and 100x speedup in quantum circuit simulation.</p>
+                        <p>Implemented high-throughput parallel gradient computation architecture, on AMD Alveo U200 FPGA, reducing computational resource usage
+                           by 20% and achieving a 5x speedup in training compared to CPU-based optimization</p>
+                        <p>Accelerated quantum circuit simulation by integrating FPGA with a Quantum Processing Unit (QPU) using High-Level Synthesis,
+                           integrating with Xilinx Vitis AI PYNQ Framework, reducing CPU resource consumption by 60% and achieving 100x speedup</p>
+                        <p>Enhanced ML inference efficiency through custom AXI4-based interface between FPGA and host system for efficient data transfer,
+                           maintaining FPGA resource utilization under 1%, and delivered 95% ML model accuracy while meeting power and timing constraints</p>
+                        
                         <div class="project-tags">
                             <span class="project-tag">FPGA</span>
                             <span class="project-tag">Quantum Computing</span>
@@ -962,12 +967,11 @@
             <h2 class="section-title">Publications & Research</h2>
             <div class="publications">
                 <div class="publication-item">
-                    <h3>High-level Integration of FPGA-based Quantum Circuit Simulation with Quantum Software Frameworks</h3>
-                    <p class="authors">FNU Pratibha, Vinayak Jha, SM Ishraq Islam, Manu Chaudhary, Alvir Nobel, Naveed Mahmud, and Esam El-Araby</p>
-                    <p class="venue">International Conference on Supercomputing (ICS'25 Cycle2) - <span class="status">Under Review</span></p>
+                    <h3>A Reconfigurable Framework for Hybrid Quantum-Classical Computings</h3>
+                    <p class="authors">FNU Pratibha, Naveed Mahmud </p>
+                    <p class="venue">MDPI Journal Algorithms, 2025 - <span class="status">Under Review</span></p>
                     <p class="abstract">
-                        In this work, we present a high-level framework for quantum circuit simulation on FPGA backends, leading to faster quantum application development and algorithm prototyping. The proposed framework can be integrated with state-of-the-art quantum software platforms such as IBM Qiskit. We evaluate the proposed framework using Alveo-U200 and Alveo-U250 accelerator boards serving as simulation backends to a Qiskit front-end environment. A quantitative comparison with CPU- and GPU-based simulations are also presented. Quantum algorithms such as multidimensional-quantum-convolution, Grover's search, and Quantum Fourier Transform are used as case studies.
-                    </p>
+                        Proposed a reconfigurable framework integrating FPGAs and QPUs to accelerate hybrid quantum-classical computing, mitigating latency by offloading classical subroutines to a high-throughput FPGA pipeline. Demonstrated up to 8x runtime improvement over CPU baseline for a variational quantum classification algorithm.
                 </div>
                 <div class="publication-item">
                     <h3>High-Level Acceleration of Quantum Simulation Frameworks on Reconfigurable Hardware</h3>
