@@ -806,14 +806,42 @@
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
             <div class="timeline">
+
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Electrical Engineering Intern/Co-Op</h3>
+                        <p class="date">July 2025 - Present</p>
+                        <p><strong> Avidyne Corporation, Melbourne, FL </strong></p>
+                        <ul>
+                            <li>Providing comprehensive testing and engineering support for mixed-signal digital processor circuits and high-speed interfaces (CPU, GPU, FPGA, memory, data-bus) in integrated avionics systems including Flight Management Systems (FMS),
+                                Multi-Function Displays (MFD), GPS/NAV/COM systems, and Synthetic Vision Systems (SVS)</li>
+                            <li>Implementing VHDL modules for high-speed sensor integration on Lattice FPGA platforms for a full design-to-validation cycle, including synthesis, timing analysis, hardware-in-loop
+                                testing on prototype board and debugging avionics hardware to validate FPGA firmware and resolve issues</li>
+                            <li> Developing single and multi-layer PCBs using Altium Designer for safety-critical avionics applications, including schematic
+                                 capture, custom component libraries, DRC/ERC validation, and complete manufacturing documentation</li>
+                            <li> Conducting certification compliance testing for general aviation and business aviation products, including DO-160G
+                                 environmental testing, EMI/EMC, DO-254 MOPS certification, and ADS-B transponder validation protocols</li>
+                            <li> Performing board-level testing, debugging, and system validation support for flight-critical avionics hardware including
+                                 Primary Flight Displays (PFD), Attitude Reference Systems (ARS), traffic advisory systems, and GPS navigation equipment</li>
+                            <li> Supporting hardware requirements verification, test protocol execution, and documentation for FAA-certified avionics systems
+                                while collaborating cross-functionally with engineering, design, and regulatory compliance teams</li>
+                        </ul>
+                    </div>
+                </div>
+                
                 <div class="timeline-item right">
                     <div class="timeline-content">
                         <h3>Research Associate (Volunteer)</h3>
-                        <p class="date">Feb 2025 - Present</p>
+                        <p class="date">Jan 2025 - Present</p>
                         <p><strong>Florida Institute of Technology, Melbourne, FL</strong></p>
                         <ul>
-                            <li>Developed and implemented FPGA-based architectures for high-performance computing, improving system efficiency by 30% and accelerating computation speed for real-time processing</li>
-                            <li>Optimized FPGA algorithms, reducing execution time by 40%, contributing to advancements in embedded systems and hardware acceleration</li>
+                            <li>Collaborating with a team of Ph.D. students on an NSF Computer and Information Science and Engineering (CISE) Research Initiation Initiative (CRII) grant. This project, inspired by my thesis, is investigating heterogeneous hardware systems
+                                (quantum processors, GPUs, and reconfigurable processors) for hybrid quantum-classical algorithms</li>
+                            <li>Designed and developed high-throughput FPGA-based architectures using C/C++ to RTL workflows within the Xilinx VITIS HLS platform on Alveo U200, achieving 30% system throughput</li>
+                            <li>Developed and verified optimized RTL modules for complex matrix multiplication, a custom IP, through comprehensive simulation using ModelSim and formal verification methodologies, achieving a 100x speedup for ML applications</li>
+                            <li>Integrated RTL modules with applications via AXI4/DDR, achieving a 25% data processing increase and efficient multi-kernel
+                                resource distribution with resource utilization under 2% through software/hardware co-design and debugging </li>
+                            <li>Porting FPGA-optimized architectures to CUDA kernels for evaluation on GPU platforms </li>
                             <li>Authored 3+ technical reports and contributed to research publications, documenting experimental results for researchers, technical reports, and industry presentations</li>
                         </ul>
                     </div>
@@ -968,6 +996,19 @@
         <div class="container">
             <h2 class="section-title">Publications & Research</h2>
             <div class="publications">
+                <div class="publication-item">
+                    <h3>Integrating Reconfigurable Accelerators with Quantum Computing</h3>
+                    <p class="authors">FNU Pratibha, Parth Ganeriwala, Naveed Mahmud </p>
+                    <p class="venue">IEEE International Conference on Quantum Computing and Engineering (QCE25) Q-CORE 2025</p>
+                    <p class="abstract">
+                        The proposed framework integrates Field-Programmable Gate Arrays (FPGAs) with quantum processing units (QPUs) for deploying HQC algorithms. Classical subroutines of the algorithms are accelerated on
+                        FPGA fabric using a high-throughput processing pipeline, while quantum subroutines are executed on QPUs. High-level software
+                        is used to seamlessly facilitate workload distribution and data exchange between classical and quantum processors. To evaluate
+                        the proposed framework, an HQC algorithm, namely variational quantum classification and MNIST dataset are used as a test
+                        case. The results demonstrate that the FPGA pipeline achieves up to 8× improvement in runtime compared to the baseline of
+                        a state-of-the-art quantum software framework running on a server-grade CPU.
+                    </p>
+                </div>
                 <div class="publication-item">
                     <h3>A Reconfigurable Framework for Hybrid Quantum-Classical Computings</h3>
                     <p class="authors">FNU Pratibha, Naveed Mahmud </p>
